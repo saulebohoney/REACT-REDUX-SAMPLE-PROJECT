@@ -1,6 +1,5 @@
 import *  as actions  from '../actions/cheese';
 
-
 export const initialState = {
     cheeses: [],
     loading: false,
@@ -16,7 +15,7 @@ export const reducer = (state=initialState, action) => {
   
     case actions.FETCH_CHEESE_SUCCESS:
         return Object.assign({}, state, {
-            cheeses: [...state.cheeses, action.cheese]});
+            cheeses: action.cheese});
 
     case actions.FETCH_CHEESE_ERROR:
         return Object.assign({}, state, {

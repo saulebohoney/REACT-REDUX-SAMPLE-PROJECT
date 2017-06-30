@@ -21,9 +21,10 @@ export const fetchCheeseRequest = cheese => ({
     type: FETCH_CHEESE_REQUEST,
     cheese
 });
+
 export const fetchCheese = () => dispatch => {
     dispatch(fetchCheeseRequest());
-    fetch('/cheeses').then (res => {
+    fetch('/api/cheeses').then (res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
