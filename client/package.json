@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "8.1.2"
+    "node": "8.1.2",
+    "npm": "5.0.3"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
