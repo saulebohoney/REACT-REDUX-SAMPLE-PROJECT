@@ -1,17 +1,27 @@
-import {ADD_CHEESE} from '../actions/cheese';
+import *  as actions  from '../actions/cheese';
+
 
 export const initialState = {
-  cheeses: [],
-  loading: false,
-  error: null
-}
+    cheeses: [],
+    loading: false,
+    error: null
+};
 
 export const reducer = (state=initialState, action) => {
-  switch(action.type) {
-    case ADD_CHEESE:
-      return Object.assign({}, state, {cheeses: [...state.cheeses, action.cheese]});
+    switch(action.type) {
 
+    case actions.FETCH_CHEESE_REQUEST:
+        return Object.assign({}, state, {
+            loading:true});
+  
+    case actions.FETCH_CHEESE_SUCCESS:
+        return Object.assign({}, state, {
+            cheeses: [...state.cheeses, action.cheese]});
+
+    case actions.FETCH_CHEESE_ERROR:
+        return Object.assign({}, state, {
+            error:'Error!'});
     default:
-      return state;
-  }
-}
+        return state;
+    }
+};
